@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viaja conmigo!</title>
+    <link rel="icon" href="imagenes/travel-itinerary.png" type="image/x-icon">
+
+    <style>
+        *{margin: 0;
+          padding: 0;
+        box-sizing: border-box;}
+
+        body {background-image: url(imagenes/body.avif); 
+            background-size: cover;}
+
+        header {
+        color: rgb(0, 0, 0);
+        text-align: center;
+        margin-top: 2vh;
+        margin-left: 25vw;
+        margin-right: 25vw;
+        background-color: rgb(252, 252, 252);
+        padding: 1.25rem;}
+
+        nav{
+            display: flex;
+            justify-content: center;
+            margin-top: 3vh;}
+
+        nav li {
+            display: inline;
+        }
+
+        nav a {color: rgb(0, 0, 0);
+        text-decoration: none;
+        padding: 1.25rem 0.625rem;
+        font-size:1.1rem;}
+
+        main {background-color: rgb(252, 252, 252);
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 4vh;
+            margin-left: 10vw;
+            margin-right: 10vw;
+            padding: 3rem;
+        }
+
+        div {display: flex;
+            justify-content: center;
+            margin-left: 2vw;
+            width: 100%;}
+
+        .primera {
+            flex: 1;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            padding-right: 1.25rem;
+        }
+
+        .primera article {
+            border: 0.063rem solid #e0e0e0;
+            border-radius: 0.625rem;
+            box-shadow: 0 0.25rem 0.625rem rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            max-width: 18.75rem;
+        }
+
+        .primera article img {
+            width: 100%;
+            height: 12.5rem;
+            object-fit: cover;
+            border-radius: 0.625rem;
+        }
+
+        .primera article h2 {
+            font-size: 1.6rem;
+            color: #000;
+            padding: 1.25rem;
+            margin-bottom: 0.625rem;
+        }
+
+        .primera article p {
+            font-size: 1.125rem;
+             color: #000;
+            padding: 1.25rem;
+            margin-top: 1.25rem;
+        }
+
+        .primera article time {
+            display: block;
+            font-size: 0.95rem;
+            color: #000;
+            text-align: center;
+        }
+
+        .primera a {
+            color: #083f64;
+            font-size: 1.25rem;
+            text-align: center;
+            margin: 0.625rem 0;
+        }
+
+        .segundo {
+            display: flex;
+            flex: 1;
+            padding: 1.5rem;
+            border-radius: 0.625rem;
+            border: 0.188rem solid #b2e0e2;
+            margin-top: 3.125rem;
+            flex-direction: column;
+        }
+
+        .segundo h2 {
+            color: #000;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .segundo label {
+            font-size: 1.2rem;
+            color: #000;
+        }
+
+        .segundo input[type="text"],
+        .segundo input[type="email"],
+        .segundo textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 0.063rem solid #ccc;
+            border-radius: 0.313rem;
+            font-size: 1rem;
+            background-color: #f9f9f9;
+            color: #333;
+            box-shadow: inset 0 0.063rem 0.188rem rgba(0, 0, 0, 0.06);
+        }
+
+        .segundo button {
+            background-color: #2c3e50;
+            color: white;
+            padding: 0.75rem 1.25rem;
+            border-radius: 0.313rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-top: 0.625rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        .descripcion-blog {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-left: 0.313rem solid #b2e0e2;
+            padding: 1.25rem;
+            margin: 0 auto;
+            max-width: 12.5rem;
+            font-size: 1.125rem;
+            line-height: 1.6;
+            color: #000;
+            border-radius: 0.5rem;
+            text-align: center;
+        }
+
+        .descripcion-blog h2 {
+            color: #327E96;
+            margin-bottom: 0.625rem;
+            text-align: center;
+        }
+
+        footer {
+        background-color: #d1e3f0 ;
+        text-align: center;
+        padding: 1rem 0;
+        font-size: 0.9rem;
+        color: #333;
+        font-family: 'Nunito', sans-serif;
+        border-top: 1px solid #ccc;
+        margin-top: 2rem;
+        }
+
+        @media (max-width: 600px) {
+            ul {
+                flex-direction: column;
+            }
+ 
+            li {
+                width: 100vw;
+                height: 2rem;
+                background-color: rgb(170, 204, 226);
+                margin: 0;
+                margin-bottom: 0.625rem;
+                text-align: center;
+            }
+
+             div {
+                flex-direction: column;
+                align-items: center;
+             }
+
+
+            .primera article {order: 1;
+                width: 90%;
+                height: auto;
+            }
+
+            .primera img {
+                max-width: 100%;
+                height: auto;
+            }
+
+            .descripcion-blog {
+                 order: 2;
+                 max-width: 90%;
+                 margin-top: 4rem;
+                 margin-right: 3rem;
+            }
+
+
+            }
+        
+
+    </style>
+</head>
+<body>
+    
+<header>
+        <h1>Mi Blog Personal de Viajes 🛫</h1>
+        <nav>
+            <ul>
+                <li><a href="Proyectos/index.html">Linktree</a></li>
+                <li><a href="articulos.html">Artículos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+</header>
+
+<main>
+<div>
+    <section class="primera">
+        <article>
+            <h2>3 lugares en Argentina que valen la pena</h2>
+            <img src="imagenes/articulouno.jpeg" alt="Paisaje en Argentina">
+            <p>Ideal si querés compartir destinos más escondidos o menos conocidos. A la gente le encanta este tipo de contenido práctico.</p>
+            <time datetime="2025-06-18">18 de Junio de 2025</time>
+            <a href="articulo1.html">Leer mas</a>
+        </article>
+        <article>
+            <h2>Consejos si vas a viajar solo/a por primera vez</h2>
+            <img src="imagenes/viajesola.jpg" alt="Viaje en solitario">
+            <p>Para quienes probablemente quieren viajar solos por primera vez pero te pueden los miedos</p>
+            <time datetime="2025-06-18">18 de Junio de 2025</time>
+            <a href="articulo2.html">Leer mas</a>
+        </article>
+        <article>
+            <h2>¿Qué ver y qué hacer en Brasil?</h2>
+            <img src="imagenes/saopaulo.avif" alt="Viaje en Brasil">
+            <p>Si llegaron hasta acá es porque están planificando un viaje, y quieren saber qué ver y qué hacer en Sao Paulo, hace click para resivir esa ayuda que buscas!</p>
+            <time datetime="2025-06-18">18 de Junio de 2025</time>
+            <a href="articulo3.html">Leer mas</a>
+        </article>
+                <article>
+            <h2>Guía para viajar a Puerto Rico</h2>
+            <img src="imagenes/puertorico.jpg" alt="Viaje en Puerto Rico">
+            <p>Puerto Rico es una pequeña porción de tierra que bien puede ser recorrida en apenas hora y media pero que esconden tesoros naturales e históricos</p>
+            <time datetime="2025-06-18">18 de Junio de 2025</time>
+            <a href="articulo4.html">Leer mas</a>
+        </article>
+        <article>
+            <h2>¿Cómo hacer un diario de viajes?</h2>
+            <img src="imagenes/journal.jpg" alt="Diario de viaje">
+            <p>Ideas y herramientas para documentar tus viajes en papel</p>
+            <time datetime="2025-06-18">18 de Junio de 2025</time>
+            <a href="articulo5.html">Leer mas</a>
+        </article>
+    </section>
+    <aside class="descripcion-blog">
+  <h2>¿De que trata este blog ✈️?</h2>
+  <p>Este blog está dedicado a inspirar a quienes aman viajar. Acá comparto experiencias personales, consejos útiles y guías sobre destinos que fui descubriendo. Ideal para quienes quieren animarse a explorar el mundo con más confianza.</p>
+    </aside>
+</div>
+        <section class="segundo" id="contacto">
+            <h2>¿Tenes dudas sobre tu próximo viaje? Contactame!</h2>
+            <form>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+</main>
+<footer> &copy; 2025 ViajaConmigo! Todos los derechos reservados. </footer>
+</body>
+</html>

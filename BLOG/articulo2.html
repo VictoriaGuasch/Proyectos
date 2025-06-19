@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viaje en solitario</title>
+    <link rel="icon" href="imagenes/map.png" type="image/x-icon">
+    
+    <style>
+        *{margin: 0;
+          padding: 0;
+        box-sizing: border-box;}
+
+        body {background-image: url(imagenes/body.avif); 
+            background-size: cover;}
+
+        p { font-family: 'Nunito', sans-serif;
+            text-align: center;}
+
+        header {
+        color: rgb(0, 0, 0);
+        text-align: center;
+        margin-top: 5vh;
+        margin-left: 25vw;
+        margin-right: 25vw;
+        background-color: rgb(252, 252, 252);
+        padding: 1.25rem;}
+
+        nav{
+            display: flex;
+            justify-content: center;
+            margin-top: 3vh;}
+
+        nav li {
+            display: inline;
+        }
+
+        nav a {color: rgb(0, 0, 0);
+        text-decoration: none;
+        padding: 1.25rem 0.625rem;
+        font-size: 1.125rem;}
+
+        main {background-color: rgb(252, 252, 252);
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 4vh;
+            margin-left: 10vw;
+            margin-right: 10vw;
+            padding: 3rem;
+        }
+
+        div {display: flex;
+            justify-content: center;
+            margin-left: 2vw;
+            width: 100%;}
+
+        .primera {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            padding-right: 1.25rem;
+            background-color: #eff4f8;
+        }
+
+        .primera img {
+            width: 50%;
+            height: 25rem;
+            margin: auto;
+            border-radius: 0.625rem;
+        }
+            .primera h1 {
+            font-size: 2.2rem;
+            color: #000000;
+            padding: 1.25rem;
+            flex-grow: 1;
+            text-align: center;
+            margin-top: 1.375rem;
+        }
+
+        .primera h2 {
+            font-size: 1.75rem;
+            color: #332a2a;
+            padding: 1.25rem;
+            flex-grow: 1;
+            text-align: left;
+            margin-top: -0.625rem;
+        }
+
+        .primera p {
+            font-size: 1.25rem;
+            color: #000000;
+            padding: 1.25rem;
+            text-align: left;
+        }
+
+        .segundo {
+            display: flex;
+            flex: 1;
+            padding: 1.5rem;
+            border-radius: 0.625rem;
+            border: 0.188rem solid #b2e0e2;
+            margin-top: 3.125rem;
+            flex-direction: column;
+        }
+
+        .segundo h2 {
+            color: #000;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .segundo label {
+            font-size: 1.2rem;
+            color: #000;
+        }
+
+        .segundo input[type="text"],
+        .segundo input[type="email"],
+        .segundo textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 0.063rem solid #ccc;
+            border-radius: 0.313rem;
+            font-size: 1rem;
+            background-color: #f9f9f9;
+            color: #333;
+            box-shadow: inset 0 0.063rem 0.188rem rgba(0, 0, 0, 0.06);
+        }
+
+        .segundo button {
+            background-color: #2c3e50;
+            color: white;
+            padding: 0.75rem 1.25rem;
+            border-radius: 0.313rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-top: 0.625rem;
+            border: none;
+            cursor: pointer;
+        }
+        
+        footer {
+        background-color: #d1e3f0 ;
+        text-align: center;
+        padding: 1rem 0;
+        font-size: 0.9rem;
+        color: #333;
+        font-family: 'Nunito', sans-serif;
+        border-top: 1px solid #ccc;
+        margin-top: 2rem;
+        }
+
+        @media (max-width: 600px) {
+            ul {
+                flex-direction: column;
+            }
+ 
+            li {
+                width: 100vw;
+                height: 2rem;
+                background-color: rgb(170, 204, 226);
+                margin: 0;
+                margin-bottom: 0.625rem;
+                text-align: center;
+            }
+
+            .primera img {
+                width: 90%;
+                height: auto;
+            }
+
+        }
+
+    </style>
+</head>
+<body>
+    
+<header>
+        <h1>Mi Blog Personal de Viajes 🛫</h1>
+        <nav>
+            <ul>
+                <li><a href="/index.html">Linktree</a></li>
+                <li><a href="articulos.html">Artículos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+</header>
+
+<main>
+<div>
+    <section class="primera">
+         <h1>Consejos si vas a viajar solo/a por primera vez 🧳</h2>
+         <img src="imagenes/viajesola.jpg">
+         <p>Si entraste a este enlace es porque probablemente querés viajar solo/a por primera vez pero estás en una disyuntiva: <strong> Te morís de ganas, pero te pueden los miedos</strong>
+Tengo una buena y una mala noticia para darte. La mala es que si la curiosidad está ahí dando vueltas, no se va a ir. La buena, es que lo que te está pasando <strong>es algo muy común</strong>. Por eso hoy quiero traerte estos <strong>3 consejos para que te animes a dar el primer paso</strong> <br> ¿Estás pensando en hacer tu primer viaje sola/o y no sabés por dónde empezar? 🌍✈️</p>
+    <h2>📝 Planificá bien tu viaje</h2>
+    <p>Esto implica leer sobre el destino que querés visitar, <strong>armar un itinerario que incluya:</strong> <br><br> 📍Zonas que te interesan visitar <br> 🏨Buscar dónde vas a alojarte <br> 💰Hacer un presupuesto para estar tranquilo/a en lo económico <br> ✈️Si optas por viajar en avión existen plataformas que te permiten realizar combinación de aerolineas y obtener un vuelo más económico <br> Una buena opción es <a href="https://www.turismocity.com.ar/" target="_blank" style="color: #0d476e; font-weight: bold;">Turismocity</a></p>
+    <h2>📝 Cuidá tus objetos de valor</h2>
+    <p>📄Lleva siempre copia de tus documentos <br> 💰No dejes todo el dinero en un mismo lugar, de este modo estarás más cubierta ante un robo o pérdida <br> 📷 Si viajas con cámaras o computadora, mantenelas siempre a la vista y con vos. <br> Esto es importante, sobre todo, si vas a viajar en autobuses o trenes donde corrés el riesgo de quedarte dormido/a 😴</p>
+    <h2>📝 Invertí en un buen seguro de viajes</h2>
+    <p>🌍 Si vas a viajar fuera del país, no escatimes en tu seguro de viajes <br> 💊 Tener un buen seguro es tener un respaldo no solo en caso de enfermedad o accidente <br> ✈️ sino también frente a un vuelo cancelado <br> 🧳 valijas perdidas <br> 🦷 o una muela partida que puedan arruinarte la experiencia de viajar solo/a por primera vez</p>
+</section>
+</div>
+        <section class="segundo" id="contacto">
+            <h2>¿Tenes dudas sobre tu próximo viaje? Contactame!</h2>
+            <form>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+</main>
+
+<footer> &copy; 2025 ViajaConmigo! Todos los derechos reservados. </footer>
+
+</body>
+</html>

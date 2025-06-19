@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 lugares para conocer</title>
+    <link rel="icon" href="imagenes/map.png" type="image/x-icon">
+    <style>
+        *{margin: 0;
+          padding: 0;
+        box-sizing: border-box;}
+
+        body {background-image: url(imagenes/body.avif); 
+            background-size: cover;}
+
+        p { font-family: 'Nunito', sans-serif;
+            text-align: center;
+            }
+
+        header {
+        color: rgb(0, 0, 0);
+        text-align: center;
+        margin-top: 5vh;
+        margin-left: 25vw;
+        margin-right: 25vw;
+        background-color: rgb(252, 252, 252);
+        padding: 1.25rem;}
+
+        nav{
+            display: flex;
+            justify-content: center;
+            margin-top: 3vh;}
+
+        nav li {
+            display: inline;
+        }
+
+        nav a {color: rgb(0, 0, 0);
+        text-decoration: none;
+        padding: 1.25rem 0.625rem;
+        font-size: 1.125rem}
+
+        main {background-color: rgb(252, 252, 252);
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 4vh;
+            margin-left: 10vw;
+            margin-right: 10vw;
+            padding: 3rem;
+        }
+
+        div {display: flex;
+            justify-content: center;
+            margin-left: 2vw;
+            width: 100%;}
+
+        .primera {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            padding-right: 1.25rem;
+            background-color: #eff4f8;
+        }
+
+        .primera img {
+            width: 50%;
+            height: 25rem;
+            margin: auto;
+            border-radius: 0.625rem;
+        }
+
+        .primera h1 {
+            font-size: 2.2rem;
+            color: #000000;
+            padding: 1.25rem;
+            flex-grow: 1;
+            text-align: center;
+            margin-top: 1.375rem;
+        }
+
+        .primera p {
+            font-size: 1.25rem;
+            color: #000000;
+            padding: 1.25rem;
+            text-align: left;
+        }
+
+        .tercera {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            padding-right: 1.25rem;
+            background-color: #eff4f8;
+        }
+
+        .tercera img {
+            width: 50%;
+            height: 25rem;
+            margin: auto;
+            border-radius: 0.625rem;
+        }
+
+        .tercera h2 {
+            font-size: 1.75rem;
+            color: #000;
+            padding: 1.25rem;
+            flex-grow: 1;
+            text-align: left;
+            margin-top: 1.25rem;
+            font-family: "Bitter";
+        }
+
+        .tercera p {
+            font-size: 1.25rem;
+            color: #000000;
+            padding: 1.25rem;
+            text-align: left;
+            margin-bottom: 1.25rem;
+        }
+
+        .tercera a{
+            color: #083f64;
+            font-size: 1.25rem;
+            text-align: left;
+            margin-top: 0.625rem;
+            margin-bottom: 0.625rem;}
+
+        .segundo {
+            display: flex;
+            flex: 1;
+            padding: 1.5rem;
+            border-radius: 0.625rem;
+            border: 0.188rem solid #b2e0e2;
+            margin-top: 3.125rem;
+            flex-direction: column;
+        }
+
+        .segundo h2 {
+            color: #000;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .segundo label {
+            font-size: 1.2rem;
+            color: #000;
+        }
+
+        .segundo input[type="text"],
+        .segundo input[type="email"],
+        .segundo textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 0.063rem solid #ccc;
+            border-radius: 0.313rem;
+            font-size: 1rem;
+            background-color: #f9f9f9;
+            color: #333;
+            box-shadow: inset 0 0.063rem 0.188rem rgba(0, 0, 0, 0.06);
+        }
+
+        .segundo button {
+            background-color: #2c3e50;
+            color: white;
+            padding: 0.75rem 1.25rem;
+            border-radius: 0.313rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-top: 0.625rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        footer {
+        background-color: #d1e3f0 ;
+        text-align: center;
+        padding: 1rem 0;
+        font-size: 0.9rem;
+        color: #333;
+        font-family: 'Nunito', sans-serif;
+        border-top: 1px solid #ccc;
+        margin-top: 2rem;
+        }
+
+        @media (max-width: 600px) {
+            ul {
+                flex-direction: column;
+            }
+ 
+            li {
+                width: 100vw;
+                height: 2rem;
+                background-color: rgb(170, 204, 226);
+                margin: 0;
+                margin-bottom: 10px;
+                text-align: center;
+            }
+
+            .primera img {
+                width: 90%;
+                height: auto;
+            }
+
+            .tercera img {
+                width: 90%;
+                height: auto;
+            }
+
+        }
+
+
+    </style>
+</head>
+<body>
+    
+<header>
+        <h1>Mi Blog Personal de Viajes 🛫</h1>
+        <nav>
+            <ul>
+                <li><a href="/index.html">Linktree</a></li>
+                <li><a href="articulos.html">Artículos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+</header>
+
+<main>
+<div>
+    <section class="primera">
+         <h1>Tres lugares en Argentina que valen la pena conocer 🏞️</h1>
+         <img src="imagenes/articulouno.jpeg">
+         <p>Argentina, un país de paisajes vastos y una diversidad cultural que sorprende en cada rincón, esconde mucho más que sus icónicos glaciares y la vibrante Buenos Aires. <strong>Para aquellos espíritus viajeros que buscan experiencias auténticas</strong> y desean salirse de los circuitos turísticos convencionales, existen joyas escondidas esperando ser descubiertas</p>
+    </section>
+</div>
+<div>
+    <section class="tercera">
+         <h2>📍 Campo de Piedra Pómez, Catamarca</h2>
+         <img src="imagenes/catamarca (2).png">
+         <p>Ubicada a 530 kilómetros de la capital de <strong>Catamarca</strong> y es uno de los destinos más mágicos, ¿por qué? El motivo es muy sencillo: es un mar de rocas blancas a más de tres mil metros de altura, con formas pautadas por la <strong>actividad volcánica</strong> de la zona hace miles de años. Los colores varían de blanco a rosa claro, grises y algún que otro rojo</p>
+    </section>
+</div>
+<div>
+    <section class="tercera">
+         <h2>📍 Termas del Río Jordán, Jujuy</h2>
+         <img src="imagenes/jujuy.png">
+         <p>Múltiples <strong>pozos naturales</strong>, con profundidades que alcanzan los 3 metros,Predomina un celeste verdoso, fruto de las abundantes concentraciones de azufre y minerales. Bañarse en sus aguas permite relajarse y dejarse llevar por la calidez de casi 30 grados centígrados, habilitando que el cuerpo absorba las propiedades benéficas que desprenden</p>
+    </section>
+</div>
+<div>
+    <section class="tercera">
+         <h2>📍Salto Encantado, Misiones</h2>
+         <img src="imagenes/misiones.png">
+         <p>Un espectáculo aguarda a quienes buscan aventuras inolvidables en la selva misionera. Un <strong>paraíso escondido</strong>, donde la naturaleza despliega su grandeza entre agua y vegetación exuberante </p>
+    </section>
+</div>
+        <section class="segundo" id="contacto">
+            <h2>¿Tenes dudas sobre tu próximo viaje? Contactame!</h2>
+            <form>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+</main>
+
+<footer> &copy; 2025 ViajaConmigo! Todos los derechos reservados. </footer>
+
+</body>
+</html>

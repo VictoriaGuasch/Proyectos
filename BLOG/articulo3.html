@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brasil</title>
+    <link rel="icon" href="imagenes/map.png" type="image/x-icon">
+
+    <style>
+        *{margin: 0;
+          padding: 0;
+        box-sizing: border-box;}
+
+        body {background-image: url(imagenes/body.avif); 
+            background-size: cover;}
+
+        p { font-family: 'Nunito', sans-serif;
+            text-align: center;}
+
+        header {
+        color: rgb(0, 0, 0);
+        text-align: center;
+        margin-top: 5vh;
+        margin-left: 25vw;
+        margin-right: 25vw;
+        background-color: #fcfcfc;
+        padding: 1.25rem;}
+
+        nav{
+            display: flex;
+            justify-content: center;
+            margin-top: 3vh;}
+
+        nav li {
+            display: inline;
+        }
+
+        nav a {color: rgb(0, 0, 0);
+        text-decoration: none;
+        padding: 1.25rem 0.625rem;
+        font-size: 1.125rem;}
+
+        main {background-color: rgb(252, 252, 252);
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 4vh;
+            margin-left: 10vw;
+            margin-right: 10vw;
+            padding: 3.125rem;
+      }
+
+        div {display: flex;
+            justify-content: center;
+            margin-left: 2vw;
+            width: 100%;}
+
+        .primera {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            padding-right: 1.25rem;
+            background-color: #eff4f8;
+        }
+
+        .primera img {
+            width: 50%;
+            height: 25rem;
+            margin: auto;
+            border-radius: 0.625rem;
+        }
+            .primera h1 {
+            font-size: 2.2rem;
+            color: #000000;
+            padding: 1.25rem;
+            flex-grow: 1;
+            text-align: center;
+            margin-top: 1.375rem;
+        }
+
+        .primera h2 {
+            font-size: 1.75rem;
+            color: #332a2a;
+            padding: 1.25rem;
+            flex-grow: 1;
+            text-align: left;
+            margin-top: -0.625rem;
+        }
+
+        .primera p {
+            font-size: 1.25rem;
+            color: #000000;
+            padding: 1.25rem;
+            text-align: left;
+        }
+
+        .segundo {
+            display: flex;
+            flex: 1;
+            padding: 1.5rem;
+            border-radius: 0.625rem;
+            border: 0.188rem solid #b2e0e2;
+            margin-top: 3.125rem;
+            flex-direction: column;
+        }
+
+        .segundo h2 {
+            color: #000;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .segundo label {
+            font-size: 1.2rem;
+            color: #000;
+        }
+
+        .segundo input[type="text"],
+        .segundo input[type="email"],
+        .segundo textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 0.063rem solid #ccc;
+            border-radius: 0.313rem;
+            font-size: 1rem;
+            background-color: #f9f9f9;
+            color: #333;
+            box-shadow: inset 0 0.063rem 0.188rem rgba(0, 0, 0, 0.06);
+        }
+
+        .segundo button {
+            background-color: #2c3e50;
+            color: white;
+            padding: 0.75rem 1.25rem;
+            border-radius: 0.313rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-top: 0.625rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        footer {
+        background-color: #d1e3f0 ;
+        text-align: center;
+        padding: 1rem 0;
+        font-size: 0.9rem;
+        color: #333;
+        font-family: 'Nunito', sans-serif;
+        border-top: 1px solid #ccc;
+        margin-top: 2rem;
+        }
+
+        @media (max-width: 600px) {
+            ul {
+                flex-direction: column;
+            }
+ 
+            li {
+                width: 100vw;
+                height: 2rem;
+                background-color: rgb(170, 204, 226);
+                margin: 0;
+                margin-bottom: 0.625rem;
+                text-align: center;
+            }
+
+            .primera img {
+                width: 90%;
+                height: auto;
+            }
+
+        }
+
+    </style>
+</head>
+<body>
+    
+<header>
+        <h1>Mi Blog Personal de Viajes 🛫</h1>
+        <nav>
+            <ul>
+                <li><a href="/index.html">Linktree</a></li>
+                <li><a href="articulos.html">Artículos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+</header>
+
+<main>
+<div>
+    <section class="primera">
+         <h1>Qué ver y qué hacer en Brasil</h1>
+         <img src="imagenes/saopaulo.avif">
+         <p>📍 Intuyo que si llegaron hasta acá es porque están planificando un viaje, y quieren saber qué ver y qué hacer en São Paulo.
+            🧳 A lo mejor viajan por trabajo y tienen tiempo libre que quieren aprovechar... y no saben si valdrá o no la pena. <br> ¡Spoiler! 👉 <strong>Sí, vale la pena</strong></p>
+        <h2>🚁 Volar en helicóptero</h2>
+        <img src="imagenes/helicopter.jpg">
+        <p>Rio de Janeiro es la ciudad con más helicópteros del mundo 🏙️<br> ¡Y lo mejor! Están disponibles para el público general <br>💸 ¿El truco? Viajar en grupo, alquilar un helicóptero entre 4 o 6 personas hace que el precio sea más accesible <br>✨ Es una forma diferente de ver la ciudad y desde las alturas</p>
+        <h2>🍽️Comer, comer y comer</h2>
+        <img src="imagenes/gastronomia.jpg">
+        <p> São Paulo es una ciudad cosmopolita 🌎, construida por la inmigración y en constante transformación <br>Esto se refleja especialmente en su gastronomía 🍜 <br>Desde comida japonesa en Liberdade hasta sabores del nordeste brasileño 🌶️, hay platos para todos los gustos <br>👉 ¡Animate a probarlo todo!</p>
+        <h2>⚽ Estadio de Maracaná</h2>
+        <img src="imagenes/maracana.jpg">
+        <p>Ideal para conocer a fondo el estadio y descubrir la historia de uno de los clubes más grandes de Brasil <br> 🎟️ Ofrecen visitas guiadas, museo y una experiencia para fanáticos del fútbol que no te podés perder <br>💥 Ideal para conocer a fondo el estadio, para los apasionados del fútbol, un obligatorio</p>
+    </section>
+</div>
+        <section class="segundo" id="contacto">
+            <h2>¿Tenes dudas sobre tu próximo viaje? Contactame!</h2>
+            <form>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+</main>
+<footer> &copy; 2025 ViajaConmigo! Todos los derechos reservados. </footer>
+</body>
+</html>
