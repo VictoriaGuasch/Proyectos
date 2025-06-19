@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Juego</title>
+  <link rel="icon"  href="iconos/trivia.png" type="image/x-icon">
+  <style>
+    body {
+      background-image: url(contenido/fondo4.jpg);
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {color: azure;
+      font-size: 32px;
+      margin: 40px 0;
+    }
+
+    .opciones {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      padding: 20px;
+    }
+
+    video {
+      width: 500px;
+      height: 500px;
+      border: 2px solid white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>¿Qué clase de jugador sos en el equipo?</h1>
+
+  <div class="opciones">
+    <a href="Juego.html">
+      <video controls muted>
+        <source src="contenido/trivia 3.mp4" type="video/mp4">
+      </video>
+    </a>
+
+    <a href="Juego.html">
+      <video controls muted>
+        <source src="contenido/trivia 4.mp4" type="video/mp4">
+      </video>
+    </a>
+  </div>
+</body>
+</html>
