@@ -9,18 +9,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="imagenes/cv.png" type="image/x-icon">
     <style> 
-        /* Variables de color para un manejo más fácil de los tonos rosados */
+    
 :root {
-    --primary-pink: #FF69B4; /* Rosa Vibrante */
-    --light-pink: #FFC0CB;   /* Rosa Claro */
-    --soft-pink: #F8BBD0;    /* Rosa Pastel Suave */
-    --bg-color: #FDF4F6;     /* Fondo muy claro, casi blanco con un toque rosa */
+    --primary-pink: #FF69B4; 
+    --light-pink: #FFC0CB;  
+    --soft-pink: #F8BBD0;   
+    --bg-color: #FDF4F6;     
     --text-color: #181515;
     --heading-color: #555;
-    --border-color: #FFB6C1; /* Rosa más tenue para bordes */
+    --border-color: #FFB6C1; 
 }
 
-/* Estilos Generales */
 body {font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
@@ -29,7 +28,7 @@ body {font-family: 'Poppins', sans-serif;
 }
 
 main {
-  padding-bottom: 100px; /* Agrega espacio debajo de todo el contenido */
+  padding-bottom: 100px;
 }
 
 .section-container {
@@ -39,7 +38,7 @@ main {
     background-color: #fff;
     border-radius: 15px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    border: 1px solid var(--border-color); /* Borde sutil */
+    border: 1px solid var(--border-color);
 }
 
 h2 {
@@ -130,19 +129,16 @@ h2::after {
   box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
-/* Contenedor de cada habilidad */
 .skill {
   margin-bottom: 30px;
 }
 
-/* Nombre de la habilidad */
 .skill-name {
   font-weight: bold;
   font-size: 1.1rem;
   margin-bottom: 10px;
 }
 
-/* Barra de fondo */
 .progress {
   background-color: #ffffff;
   border-radius: 10px;
@@ -151,7 +147,6 @@ h2::after {
   width: 100%;
 }
 
-/* Barra de progreso interna */
 .progress-bar {
   height: 100%;
   background-image: url(imagenes/background.gif);
@@ -244,7 +239,7 @@ h2::after {
 }
 
 #proyectos {
-  background-color: #F5E6FF; /* Violeta suave */
+  background-color: #F5E6FF;
   padding: 4rem 2rem;
   border-radius: 2vh;
   margin-bottom: 5vh;
@@ -252,11 +247,11 @@ h2::after {
 
 .botones-proyectos {
   display: flex;
-  flex-direction: row;  /* Esto los pone en fila horizontal */
+  flex-direction: row;  
   gap: 1.5rem;
   margin-top: 1rem;
-  justify-content: center; /* Opcional: centra los botones en la sección */
-  flex-wrap: wrap; /* Por si la pantalla es chica, que se acomoden */
+  justify-content: center; 
+  flex-wrap: wrap; 
 }
 
 .boton-proyecto {margin-top: 4vh;
@@ -275,7 +270,6 @@ h2::after {
   background-color: #a66b6b;
 }
 
-/* Formulario de Contacto */
 .contact-form form {
     max-width: 600px;
     margin: 0 auto;
@@ -305,7 +299,7 @@ h2::after {
     font-size: 1em;
     color: var(--text-color);
     background-color: #fff;
-    box-sizing: border-box; /* Para incluir padding y borde en el ancho total */
+    box-sizing: border-box; 
 }
 
 .form-group input[type="text"]:focus,
@@ -325,7 +319,7 @@ h2::after {
     font-size: 1.1em;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    align-self: flex-end; /* Alinea el botón a la derecha en la columna */
+    align-self: flex-end; 
 }
 
 .btn-submit:hover {
@@ -333,7 +327,6 @@ h2::after {
     transform: translateY(-2px);
 }
 
-/* Footer */
 footer {
     background-color: #75052C;
     color: white;
@@ -346,7 +339,6 @@ footer {
 
 @media (max-width: 600px) {
 
-  /* Navbar en columna */
   .navbar nav ul {
     flex-direction: column;
     align-items: center;
@@ -357,7 +349,6 @@ footer {
     margin: 0;
   }
 
-  /* Ajustes generales */
   body {
     font-size: 0.95rem;
   }
@@ -367,21 +358,17 @@ footer {
     font-size: 1.6em;
   }
 
-  /* Secciones más compactas */
   .section-container,
   #habilidades,
   #proyectos {margin-top: 2.3rem;
     padding: 30px 15px;
   }
 
-
-  /* Texto centrado y más angosto */
   .about-me p {
     font-size: 1em;
     padding: 0 10px;
   }
 
-  /* Botones de proyectos */
   .boton-proyecto {
     padding: 1rem;
     font-size: 1.2rem;
@@ -394,7 +381,6 @@ footer {
     gap: 1rem;
   }
 
-  /* Resumen */
   .resumen {margin-top: 4vh;
     padding: 2rem 1rem;
     flex-direction: column;
@@ -406,9 +392,6 @@ footer {
     flex-direction: column;
     gap: 2rem;
   }
-  
-
-  /* Contacto */
 
    .contact-form form {
     width: 100%;
@@ -421,18 +404,15 @@ footer {
     font-size: 1rem;
   }
 
-  /* Footer */
   footer {
     font-size: 0.9rem;
     padding: 8px 0;
   }
 
   main {
-    padding-bottom: 140px; /* para que no se oculte contenido tras el footer fijo */
+    padding-bottom: 140px;
   }
 }
-
-    
 
     </style>
     </head>
