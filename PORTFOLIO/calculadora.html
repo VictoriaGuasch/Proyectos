@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Calculadora</title>
-  <link rel="icon" href="/PORTFOLIO/imagenes/calculator.png" type="image/x-icon">
+  <link rel="icon" href="imagenes/calculator.png" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
@@ -18,7 +18,7 @@
     }
 
     body {
-    font-family: 'Arial', sans-serif; /* Cambia esto si usas Google Fonts */
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     background-color: var(--bg-color);
@@ -61,7 +61,6 @@
     color: #fff;
 }
 
-    /* Sección de información */
     .section-container { font-family: 'Poppins', sans-serif;
       max-width: 1000px;
       margin: 80px auto;
@@ -73,7 +72,7 @@
     }
 
     h2 {
-  background-image: url(/PORTFOLIO/imagenes/background.gif);
+  background-image: url(imagenes/background.gif);
   text-align: center;
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -95,14 +94,14 @@
     }
 
     :root {
-            --primary-pink: #FF69B4; /* Rosa Vibrante */
-            --light-pink: #FFC0CB;   /* Rosa Claro */
-            --soft-pink: #F8BBD0;    /* Rosa Pastel Suave */
-            --bg-color: #FDF4F6;     /* Fondo muy claro, casi blanco con un toque rosa */
+            --primary-pink: #FF69B4; 
+            --light-pink: #FFC0CB;  
+            --soft-pink: #F8BBD0;   
+            --bg-color: #FDF4F6;     
             --text-color: #333;
             --button-text-color: #555;
-            --operator-color: #FF69B4; /* Color para operadores */
-            --accent-color: #E0509B; /* Un tono más oscuro de rosa para hover */
+            --operator-color: #FF69B4; 
+            --accent-color: #E0509B;
             --border-radius-calc: 20px;
             --border-radius-buttons: 10px;
             --shadow-light: rgba(0, 0, 0, 0.08);
@@ -126,51 +125,51 @@
     box-shadow: 0 8px 30px var(--shadow-medium);
     padding: 30px;
     border: 1px solid var(--soft-pink);
-    margin: 0 auto; /* Esto centra horizontalmente */
+    margin: 0 auto;
     }
 
         .visor {
-            background: var(--bg-color); /* Fondo del visor más claro */
-            color: var(--primary-pink); /* Color del texto del visor rosa */
-            font-family: 'Share Tech Mono', monospace; /* Una fuente tipo "digital" pero legible */
+            background: var(--bg-color); 
+            color: var(--primary-pink);
+            font-family: 'Share Tech Mono', monospace; 
             font-size: 2.5em;
             border-radius: var(--border-radius-buttons);
             padding: 15px 18px 10px 18px;
             margin-bottom: 20px;
-            min-width: 280px; /* Un poco más ancha */
+            min-width: 280px;
             text-align: right;
-            box-shadow: inset 0 2px 8px var(--shadow-light); /* Sombra interna más clara */
+            box-shadow: inset 0 2px 8px var(--shadow-light); 
             letter-spacing: 1px;
             min-height: 90px;
-            height: auto; /* Altura auto para que se adapte al contenido */
+            height: auto;
             display: flex;
             flex-direction: column;
-            justify-content: space-between; /* Espacio entre el input y el resultado */
+            justify-content: space-between; 
             align-items: flex-end;
-            word-break: break-all; /* Para evitar desbordamiento con números largos */
+            word-break: break-all; 
         }
 
         .visor .resultado {
-            font-size: 0.7em; /* Resultado un poco más pequeño */
-            color: var(--text-color); /* Color más oscuro para el resultado */
+            font-size: 0.7em; 
+            color: var(--text-color); 
             opacity: 0.7;
-            min-height: 1em; /* Para mantener el espacio */
+            min-height: 1em; 
         }
 
         .visor .input {
-            font-size: 1em; /* Input principal */
+            font-size: 1em; 
             color: var(--primary-pink);
-            min-height: 1.2em; /* Para mantener el espacio */
+            min-height: 1.2em; 
         }
 
         .botones {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 12px; /* Espacio entre botones */
+            gap: 12px; 
         }
 
         .botones button {
-            background-color: var(--light-pink); /* Fondo de botón rosa claro */
+            background-color: var(--light-pink); 
             color: var(--button-text-color);
             border: none;
             border-radius: var(--border-radius-buttons);
@@ -179,7 +178,7 @@
             cursor: pointer;
             transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
             box-shadow: 0 4px 8px var(--shadow-light);
-            outline: none; /* Elimina el contorno al hacer clic */
+            outline: none; 
         }
 
         .botones button:active {
@@ -187,7 +186,7 @@
             box-shadow: 0 2px 4px var(--shadow-light);
         }
 
-        /* Estilos específicos para operadores */
+       
         .botones button:is(
             :nth-child(1), /* + */
             :nth-child(2), /* - */
@@ -196,7 +195,7 @@
             :nth-child(5), /* % */
             :nth-child(6)  /* √ */
         ) {
-            background-color: var(--primary-pink); /* Operadores rosa vibrante */
+            background-color: var(--primary-pink); 
             color: #fff;
             font-weight: 600;
         }
@@ -217,7 +216,7 @@
             :nth-child(17), /* AC */
             :nth-child(18)  /* CE */
         ) {
-            background-color: var(--soft-pink); /* Rosado más suave para limpiar */
+            background-color: var(--soft-pink); 
             color: var(--button-text-color);
         }
 
@@ -225,14 +224,14 @@
             :nth-child(17),
             :nth-child(18)
         ):hover {
-            background-color: #EFC4D4; /* Tono ligeramente más oscuro al pasar el mouse */
+            background-color: #EFC4D4; 
         }
 
         /* Estilo para el botón de igual */
         .botones button:nth-child(19) { /* = */
             background-color: var(--primary-pink);
             color: #fff;
-            grid-column: span 2; /* Para que ocupe dos columnas si quieres un botón más grande */
+            grid-column: span 2; 
             font-weight: 700;
         }
 
@@ -240,7 +239,6 @@
             background-color: var(--accent-color);
         }
 
-        /* Estilo para el punto decimal */
         .botones button:nth-child(20) { /* . */
             background-color: var(--light-pink);
             color: var(--button-text-color);
@@ -255,7 +253,7 @@
             :nth-child(17),
             :nth-child(18)
         )) {
-            background-color: #FFDEEE; /* Un rosa aún más claro para los números al pasar el mouse */
+            background-color: #FFDEEE;
         }
 
         .calcu {
@@ -291,11 +289,11 @@ footer {
   gap: 90px;
   padding: 40px 20px;
   margin-top: 4vh;
-  flex-wrap: wrap; /* Hace que se adapten en pantallas más chicas */
+  flex-wrap: wrap; 
 }
 
 .section-container {
-  flex: 1 1 400px; /* Flexible y mínimo 400px */
+  flex: 1 1 400px; 
   max-width: 500px;
 }
 
