@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portfolio Rosa</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="/PORTFOLIO/imagenes/cv.png" type="image/x-icon">
+    <style> 
+        /* Variables de color para un manejo más fácil de los tonos rosados */
+:root {
+    --primary-pink: #FF69B4; /* Rosa Vibrante */
+    --light-pink: #FFC0CB;   /* Rosa Claro */
+    --soft-pink: #F8BBD0;    /* Rosa Pastel Suave */
+    --bg-color: #FDF4F6;     /* Fondo muy claro, casi blanco con un toque rosa */
+    --text-color: #181515;
+    --heading-color: #555;
+    --border-color: #FFB6C1; /* Rosa más tenue para bordes */
+}
+
+/* Estilos Generales */
+body {font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    line-height: 1.6;
+}
+
+main {
+  padding-bottom: 100px; /* Agrega espacio debajo de todo el contenido */
+}
+
+.section-container {
+    padding: 60px 20px;
+    margin: 20px auto;
+    max-width: 1000px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color); /* Borde sutil */
+}
+
+h2 {
+    text-align: center;
+    color: var(--heading-color);
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-pink);
+    margin: 10px auto 0;
+    border-radius: 5px;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #fff;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar nav ul li {
+    margin: 0 20px;
+}
+
+.navbar nav ul li a {
+    text-decoration: none;
+    color: var(--heading-color);
+    font-weight: 600;
+    font-size: 1.1em;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar nav ul li a:hover {
+    background-color: var(--light-pink);
+    color: #fff;
+}
+
+/* Sobre Mí */
+.about-me .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.about-me .foto-perfil {
+  max-width: 300px;
+  border-radius: 50%;
+  border: 3px solid var(--primary-pink);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-me p {
+    max-width: 900px;
+    font-size: 1.3rem;
+    color: #666;
+}
+
+#habilidades {
+  background-color: #FFE6E6;
+  padding: 4rem 2rem;
+  border-radius: 2vh;
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 80px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+/* Contenedor de cada habilidad */
+.skill {
+  margin-bottom: 30px;
+}
+
+/* Nombre de la habilidad */
+.skill-name {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+/* Barra de fondo */
+.progress {
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 20px;
+  width: 100%;
+}
+
+/* Barra de progreso interna */
+.progress-bar {
+  height: 100%;
+  background-image: url(/PORTFOLIO/imagenes/background.gif);
+  text-align: right;
+  padding-right: 10px;
+  color: #8C3048;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: 10px 0 0 10px;
+  transition: width 0.5s ease-in-out;
+}
+  
+    .resumen {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #FFE6E6;
+  padding: 5rem 2rem;
+  border-radius: 2vh;
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
+
+.timeline-box {
+  flex: 1;
+  min-width: 300px;
+}
+
+.timeline-title {color: #555;
+  margin-top: -2.5vh;
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-bottom: 5vh;
+  text-align: center;
+  position: relative;
+}
+
+.timeline-title::after {
+  content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-pink);
+    margin: 10px auto 0;
+    border-radius: 5px;
+}
+
+.timeline {
+  position: relative;
+  margin: 0 auto;
+  border-left: 2px solid #cc2552;
+  padding-left: 30px;
+  width: fit-content;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 4vh;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -38px;
+  top: 15px;
+  width: 12px;
+  height: 12px;
+  background-color: #f0f9ff;
+  border: 2px solid #8C3048;
+  border-radius: 50%;
+}
+
+.item-title {
+  font-weight: bold;
+}
+
+.item-date {
+  color: #000;
+  font-size: 1rem;
+  margin-top: 5px;
+}
+
+.item-location {
+  font-style: italic;
+  color: #424141;
+  font-size: 1rem;
+}
+
+#proyectos {
+  background-color: #F5E6FF; /* Violeta suave */
+  padding: 4rem 2rem;
+  border-radius: 2vh;
+  margin-bottom: 5vh;
+}
+
+.botones-proyectos {
+  display: flex;
+  flex-direction: row;  /* Esto los pone en fila horizontal */
+  gap: 1.5rem;
+  margin-top: 1rem;
+  justify-content: center; /* Opcional: centra los botones en la sección */
+  flex-wrap: wrap; /* Por si la pantalla es chica, que se acomoden */
+}
+
+.boton-proyecto {margin-top: 4vh;
+  padding: 4rem 5rem;
+  background-color: #BF8181;
+  color: white;
+  text-decoration: none;
+  font-size: 1.7rem;
+  border-radius: 8px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+  min-width: 500px;
+}
+
+.boton-proyecto:hover {
+  background-color: #a66b6b;
+}
+
+/* Formulario de Contacto */
+.contact-form form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    border: 1px solid var(--soft-pink);
+    border-radius: 10px;
+    background-color: var(--bg-color);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--heading-color);
+    font-weight: 600;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--light-pink);
+    border-radius: 5px;
+    font-size: 1em;
+    color: var(--text-color);
+    background-color: #fff;
+    box-sizing: border-box; /* Para incluir padding y borde en el ancho total */
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-pink);
+    box-shadow: 0 0 0 3px rgba(255, 105, 180, 0.2);
+}
+
+.btn-submit {
+    background-color: var(--primary-pink);
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    align-self: flex-end; /* Alinea el botón a la derecha en la columna */
+}
+
+.btn-submit:hover {
+    background-color: #E0509B;
+    transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+    background-color: #75052C;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+@media (max-width: 600px) {
+
+  /* Navbar en columna */
+  .navbar nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .navbar nav ul li {
+    margin: 0;
+  }
+
+  /* Ajustes generales */
+  body {
+    font-size: 0.95rem;
+  }
+
+  h2,
+  .timeline-title {
+    font-size: 1.6em;
+  }
+
+  /* Secciones más compactas */
+  .section-container,
+  #habilidades,
+  #proyectos {margin-top: 2.3rem;
+    padding: 30px 15px;
+  }
+
+
+  /* Texto centrado y más angosto */
+  .about-me p {
+    font-size: 1em;
+    padding: 0 10px;
+  }
+
+  /* Botones de proyectos */
+  .boton-proyecto {
+    padding: 1rem;
+    font-size: 1.2rem;
+    min-width: unset;
+    width: 95%;
+  }
+
+  .botones-proyectos {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  /* Resumen */
+  .resumen {margin-top: 4vh;
+    padding: 2rem 1rem;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .timeline-title {margin-top: 1vh;
+    padding: 2rem 1rem;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+
+  /* Contacto */
+
+   .contact-form form {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1rem;
+  }
+
+  .btn-submit {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  /* Footer */
+  footer {
+    font-size: 0.9rem;
+    padding: 8px 0;
+  }
+
+  main {
+    padding-bottom: 140px; /* para que no se oculte contenido tras el footer fijo */
+  }
+}
+
+    
+
+    </style>
+    </head>
+<body>
+    <header class="navbar">
+        <nav>
+            <ul>
+                <li><a href="/index.html">Linktree</a></li>
+                <li><a href="#sobre-mi">Sobre mí</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#resumen">Educación</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="sobre-mi" class="section-container about-me">
+  <h2>🌸Sobre mí🌸</h2>
+  <div class="content">
+    <img src="/PORTFOLIO/imagenes/galeria/img2.png" alt="Foto de Victoria" class="foto-perfil">
+    <p>Hola, mi nombre es Victoria, una persona a quien le mueve la curiosidad por entender datos, crear con código y optimizar estrategias digitales.
+    Estudio Licenciatura en Comercialización en UADE y me estoy formando en marketing digital, análisis y programación para impulsar <strong>decisiones basadas en datos</strong></p>
+  </div>
+</section>
+
+            <section id="habilidades">
+      <h2>Habilidades</h2>
+
+  <div class="skill">
+    <div class="skill-name">Ecommerce</div>
+    <div class="progress"><div class="progress-bar" style="width: 100%;">100%</div></div>
+  </div>
+
+  <div class="skill">
+    <div class="skill-name">Google Analytics</div>
+    <div class="progress"><div class="progress-bar" style="width: 90%;">90%</div></div>
+  </div>
+
+  <div class="skill">
+    <div class="skill-name">Google Tag Manager</div>
+    <div class="progress"><div class="progress-bar" style="width: 75%;">75%</div></div>
+  </div>
+
+  <div class="skill">
+    <div class="skill-name">Python</div>
+    <div class="progress"><div class="progress-bar" style="width: 80%;">80%</div></div>
+  </div>
+
+  <div class="skill">
+    <div class="skill-name">Looker Studio</div>
+    <div class="progress"><div class="progress-bar" style="width: 90%;">90%</div></div>
+  </div>
+    </section>
+
+<section id="resumen">
+ <div class="resumen">
+    <!-- Educación -->
+    <div class="timeline-box">
+      <div class="timeline-title">Educación</div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="item-title">APRENDE ANÁLISIS DE DATOS: FUNDAMENTOS</div>
+          <div class="item-date">2024</div>
+          <div class="item-location">LinkedIn</div>
+        </div>
+        <div class="timeline-item">
+          <div class="item-title">INTRODUCCIÓN A LAS HABILIDADES PROFESIONALES EN ANÁLISIS DE DATOS
+          </div>
+          <div class="item-date">2024</div>
+          <div class="item-location">LinkedIn</div>
+        </div>
+        <div class="timeline-item">
+          <div class="item-title">LICENCIATURA EN COMERCIALIZACIÓN</div>
+          <div class="item-date">2023</div>
+          <div class="item-location">Universidad Argentina de la Empresa</div>
+        </div>
+        <div class="timeline-item">
+          <div class="item-title">CURSO DE COMMUNITY MANAGER & PUBLICIDAD</div>
+          <div class="item-date">2022</div>
+          <div class="item-location">CoderHouse</div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+    </section>
+
+<section id="proyectos">
+  <h2>Proyectos</h2>
+
+  <div class="botones-proyectos">
+    <a href="galeria.html" class="boton-proyecto">📸 Galería</a>
+    <a href="calculadora.html" class="boton-proyecto">🧮 Calculadora</a>
+    <a href="tareas.html" class="boton-proyecto">📝 Lista de Tareas</a>
+  </div>
+</section>
+
+        <section id="contacto" class="section-container contact-form">
+            <h2>Contacto</h2>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Enviar Mensaje</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Victoria Guasch Vives</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

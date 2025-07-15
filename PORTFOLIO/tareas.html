@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas</title>
+    <link rel="icon" href="/PORTFOLIO/imagenes/wirte.png" type="image/x-icon">
+
+    <style>
+
+:root {
+      --primary-pink: #FF69B4;
+      --light-pink: #FFC0CB;
+      --soft-pink: #F8BBD0;
+      --bg-color: #FDF4F6;
+      --text-color: #333;
+      --heading-color: #75052C;
+    }
+    
+body {
+    font-family: 'Arial', sans-serif; /* Cambia esto si usas Google Fonts */
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}    
+
+.navbar {
+    background-color: #fff;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar nav ul li {
+    margin: 0 20px;
+}
+
+.navbar nav ul li a {
+    text-decoration: none;
+    color: var(--heading-color);
+    font-weight: 600;
+    font-size: 1.2rem;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar nav ul li a:hover {
+    background-color: var(--light-pink);
+    color: #fff;
+}
+
+        .lista {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 20px;
+            background-color: #ffe1e6;
+            border-radius: 2rem;
+            border: 4px solid #75052C;
+            color: #000000;
+            margin-bottom: 10vh;
+        }
+        
+        h1, h2 {text-align: center;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        font-size: 2rem;
+        margin-bottom: 30px;
+        }
+        
+        .input-container {
+            display: flex;
+            margin-bottom: 20px;
+            gap: 10px;
+        }
+        
+        #nuevaTarea {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #75052C;
+            border-radius: 4px;
+            font-size: 1.2rem;
+        }
+        
+        button {
+            padding: 10px 15px;
+            background-color: #25a730;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #197921;
+        }
+        
+        .lista-tareas {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .tarea {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 15px;
+            background-color: white;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            margin-bottom: 8px;
+            transition: all 0.3s;
+        }
+        
+        .tarea:hover {
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .tarea.completada {
+            background-color: #f8f8f8;
+            text-decoration: line-through;
+            color: #888;
+        }
+        
+        .acciones {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .acciones button {
+            padding: 5px 10px;
+            font-size: 1.2rem;
+        }
+        
+        .editar {
+            background-color: #3498db;
+        }
+        
+        .editar:hover {
+            background-color: #2980b9;
+        }
+        
+        .eliminar {
+            background-color: #e74c3c;
+        }
+        
+        .eliminar:hover {
+            background-color: #c0392b;
+        }
+        
+        .guardar {
+            background-color: #2ecc71;
+            display: none;
+        }
+        
+        .cargando {
+            text-align: center;
+            color: #161818;
+            font-style: italic;
+        }
+
+        .instrucciones {
+    background-image: url(/PORTFOLIO/imagenes/background.gif);
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 2.3rem;
+  margin-bottom: 30px;
+  position: relative;
+  padding: 1rem;
+  border: 4px solid #75052C;
+  border-radius: 12px;
+}
+
+.instrucciones ul {margin-top: -5vh;
+    padding-left: 20px;
+    border-radius: 2rem;
+    padding: 1rem 2rem;
+}
+
+.instrucciones li { font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+p{
+border-radius: 2rem;
+padding: 1rem 2rem;}
+
+footer {
+    background-color: #75052C;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.copy {
+    background-color: #75052C;
+    color: white;
+    text-align: center;
+    padding: 0;
+}
+
+@media (max-width: 600px) {
+
+  .navbar nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .navbar nav ul li {
+    margin: 0;
+  }
+
+  footer {
+    font-size: 0.9rem;
+    padding: 8px 0;
+  }
+
+  main {
+    padding-bottom: 90px;
+  }
+}
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <nav>
+            <ul>
+                <li><a href="/index.html">Linktree</a></li>
+                <li><a href="index.html#sobre-mi">Sobre mí</a></li>
+                <li><a href="index.html#habilidades">Habilidades</a></li>
+                <li><a href="index.html#resumen">Educación</a></li>
+                <li><a href="index.html#proyectos">Proyectos</a></li>
+                <li><a href="index.html#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="lista">
+    <div class="instrucciones">
+    <h1>📝 <strong>Lista de tareas</strong></p>
+    <ul>
+        <li>➕ Agregar nuevas tareas escribiendo en el campo y presionando <strong>Enter</strong> o haciendo clic en <strong>"Agregar"</strong>.</li>
+        <li>✅ Marcar tareas como <strong>completadas</strong> con el botón ✓, o volver a activarlas con ❌</li>
+        <li>✏️ Editar una tarea haciendo clic en el ícono del lápiz</li>
+        <li>💾 Guardar cambios con el botón de disquete</li>
+        <li>🗑️ Eliminar tareas que ya no necesitás</li>
+    </ul>
+    <h2>Tus tareas <strong>se guardan automáticamente</strong> en tu navegador</h2>
+</div>
+
+    <div class="input-container">
+        <input type="text" id="nuevaTarea" placeholder="Añade una nueva tarea...">
+        <button id="agregar">Agregar</button>
+    </div>
+    
+    <ul class="lista-tareas" id="listaTareas">
+        <li class="cargando">Cargando tareas...</li>
+    </ul>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const inputTarea = document.getElementById('nuevaTarea');
+            const btnAgregar = document.getElementById('agregar');
+            const listaTareas = document.getElementById('listaTareas');
+            
+            let db;
+            const DB_NAME = 'TareasDB';
+            const STORE_NAME = 'tareas';
+            const DB_VERSION = 1;
+            
+            // Abrir/Crear la base de datos
+            const request = indexedDB.open(DB_NAME, DB_VERSION);
+            
+            request.onerror = function(event) {
+                console.error("Error al abrir la base de datos", event.target.error);
+                listaTareas.innerHTML = '<li class="error">Error al cargar las tareas. Recarga la página.</li>';
+            };
+            
+            request.onsuccess = function(event) {
+                db = event.target.result;
+                cargarTareas();
+            };
+            
+            request.onupgradeneeded = function(event) {
+                const db = event.target.result;
+                
+                // Crear el almacén de objetos (equivalente a tablas en SQL)
+                const objectStore = db.createObjectStore(STORE_NAME, {
+                    keyPath: 'id',
+                    autoIncrement: true
+                });
+                
+                // Crear índices para búsquedas
+                objectStore.createIndex('texto', 'texto', { unique: false });
+                objectStore.createIndex('completada', 'completada', { unique: false });
+            };
+            
+            // Agregar nueva tarea
+            btnAgregar.addEventListener('click', agregarTarea);
+            inputTarea.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') agregarTarea();
+            });
+            
+            function agregarTarea() {
+                const texto = inputTarea.value.trim();
+                if (texto === '') return;
+                
+                const transaction = db.transaction([STORE_NAME], 'readwrite');
+                const store = transaction.objectStore(STORE_NAME);
+                
+                const tarea = {
+                    texto: texto,
+                    completada: false,
+                    fecha: new Date()
+                };
+                
+                const request = store.add(tarea);
+                
+                request.onsuccess = function() {
+                    inputTarea.value = '';
+                    inputTarea.focus();
+                    cargarTareas();
+                };
+                
+                request.onerror = function(event) {
+                    console.error("Error al agregar tarea", event.target.error);
+                };
+            }
+            
+            function cargarTareas() {
+                const transaction = db.transaction([STORE_NAME], 'readonly');
+                const store = transaction.objectStore(STORE_NAME);
+                const request = store.getAll();
+                
+                request.onsuccess = function(event) {
+                    const tareas = event.target.result;
+                    renderizarTareas(tareas);
+                };
+                
+                request.onerror = function(event) {
+                    console.error("Error al cargar tareas", event.target.error);
+                    listaTareas.innerHTML = '<li class="error">Error al cargar las tareas. Recarga la página.</li>';
+                };
+            }
+            
+            function renderizarTareas(tareas) {
+                if (tareas.length === 0) {
+                    listaTareas.innerHTML = '<li class="vacío">No hay tareas. ¡Añade alguna!</li>';
+                    return;
+                }
+                
+                listaTareas.innerHTML = '';
+                
+                // Ordenar por fecha (más recientes primero)
+                tareas.sort((a, b) => b.fecha - a.fecha);
+                
+                tareas.forEach(tarea => {
+                    const li = document.createElement('li');
+                    li.className = `tarea ${tarea.completada ? 'completada' : ''}`;
+                    li.dataset.id = tarea.id;
+                    
+                    const span = document.createElement('span');
+                    span.textContent = tarea.texto;
+                    
+                    const divAcciones = document.createElement('div');
+                    divAcciones.className = 'acciones';
+                    
+                    const btnCompletar = document.createElement('button');
+                    btnCompletar.textContent = tarea.completada ? '❌' : '✓';
+                    btnCompletar.onclick = () => toggleCompletada(tarea);
+                    
+                    const btnEditar = document.createElement('button');
+                    btnEditar.textContent = '✏️';
+                    btnEditar.className = 'editar';
+                    btnEditar.onclick = () => editarTarea(tarea);
+                    
+                    const btnGuardar = document.createElement('button');
+                    btnGuardar.textContent = '💾';
+                    btnGuardar.className = 'guardar';
+                    btnGuardar.onclick = () => guardarEdicion(tarea.id);
+                    
+                    const btnEliminar = document.createElement('button');
+                    btnEliminar.textContent = '🗑️';
+                    btnEliminar.className = 'eliminar';
+                    btnEliminar.onclick = () => eliminarTarea(tarea.id);
+                    
+                    divAcciones.appendChild(btnCompletar);
+                    divAcciones.appendChild(btnEditar);
+                    divAcciones.appendChild(btnGuardar);
+                    divAcciones.appendChild(btnEliminar);
+                    
+                    li.appendChild(span);
+                    li.appendChild(divAcciones);
+                    listaTareas.appendChild(li);
+                });
+            }
+            
+            function toggleCompletada(tarea) {
+                const transaction = db.transaction([STORE_NAME], 'readwrite');
+                const store = transaction.objectStore(STORE_NAME);
+                
+                tarea.completada = !tarea.completada;
+                
+                const request = store.put(tarea);
+                
+                request.onsuccess = function() {
+                    cargarTareas();
+                };
+                
+                request.onerror = function(event) {
+                    console.error("Error al actualizar tarea", event.target.error);
+                };
+            }
+            
+            function editarTarea(tarea) {
+                const li = document.querySelector(`li[data-id="${tarea.id}"]`);
+                
+                if (li) {
+                    const span = li.querySelector('span');
+                    const input = document.createElement('input');
+                    input.type = 'text';
+                    input.value = tarea.texto;
+                    input.className = 'edit-input';
+                    
+                    li.replaceChild(input, span);
+                    input.focus();
+                    
+                    // Mostrar botón guardar y ocultar editar
+                    li.querySelector('.editar').style.display = 'none';
+                    li.querySelector('.guardar').style.display = 'block';
+                    
+                    // Guardar al presionar Enter
+                    input.addEventListener('keypress', function(e) {
+                        if (e.key === 'Enter') {
+                            guardarEdicion(tarea.id);
+                        }
+                    });
+                }
+            }
+            
+            function guardarEdicion(id) {
+                const li = document.querySelector(`li[data-id="${id}"]`);
+                const input = li.querySelector('.edit-input');
+                const nuevoTexto = input.value.trim();
+                
+                if (nuevoTexto === '') {
+                    eliminarTarea(id);
+                    return;
+                }
+                
+                const transaction = db.transaction([STORE_NAME], 'readwrite');
+                const store = transaction.objectStore(STORE_NAME);
+                const getRequest = store.get(id);
+                
+                getRequest.onsuccess = function(event) {
+                    const tarea = event.target.result;
+                    if (tarea) {
+                        tarea.texto = nuevoTexto;
+                        tarea.fecha = new Date(); // Actualizar fecha de modificación
+                        
+                        const putRequest = store.put(tarea);
+                        
+                        putRequest.onsuccess = function() {
+                            cargarTareas();
+                        };
+                        
+                        putRequest.onerror = function(event) {
+                            console.error("Error al guardar edición", event.target.error);
+                        };
+                    }
+                };
+                
+                getRequest.onerror = function(event) {
+                    console.error("Error al obtener tarea para editar", event.target.error);
+                };
+            }
+            
+            function eliminarTarea(id) {
+                const transaction = db.transaction([STORE_NAME], 'readwrite');
+                const store = transaction.objectStore(STORE_NAME);
+                const request = store.delete(id);
+                
+                request.onsuccess = function() {
+                    cargarTareas();
+                };
+                
+                request.onerror = function(event) {
+                    console.error("Error al eliminar tarea", event.target.error);
+                };
+            }
+        });
+    </script>
+    </section>
+
+<footer>
+        <p class="copy">&copy; 2025 Victoria Guasch Vives</p>
+    </footer>
+
+</body>
+</html>

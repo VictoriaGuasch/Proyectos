@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Calculadora</title>
+  <link rel="icon" href="/PORTFOLIO/imagenes/calculator.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-pink: #FF69B4;
+      --light-pink: #FFC0CB;
+      --soft-pink: #F8BBD0;
+      --bg-color: #FDF4F6;
+      --text-color: #333;
+      --heading-color: #75052C;
+    }
+
+    body {
+    font-family: 'Arial', sans-serif; /* Cambia esto si usas Google Fonts */
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+    .navbar {
+    background-color: #fff;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar nav ul li {
+    margin: 0 20px;
+}
+
+.navbar nav ul li a {
+    text-decoration: none;
+    color: var(--heading-color);
+    font-weight: 600;
+    font-size: 1.1em;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar nav ul li a:hover {
+    background-color: var(--light-pink);
+    color: #fff;
+}
+
+    /* Sección de información */
+    .section-container { font-family: 'Poppins', sans-serif;
+      max-width: 1000px;
+      margin: 80px auto;
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      padding: 60px 30px;
+      border: 1px solid var(--soft-pink);
+    }
+
+    h2 {
+  background-image: url(/PORTFOLIO/imagenes/background.gif);
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 2.3rem;
+  margin-bottom: 30px;
+  position: relative;
+  padding: 1rem;
+  border: 4px solid #75052C;
+  border-radius: 12px;
+}
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      text-align: center;
+      max-width: 500px;
+      margin: 0 auto;
+      color: black;
+    }
+
+    :root {
+            --primary-pink: #FF69B4; /* Rosa Vibrante */
+            --light-pink: #FFC0CB;   /* Rosa Claro */
+            --soft-pink: #F8BBD0;    /* Rosa Pastel Suave */
+            --bg-color: #FDF4F6;     /* Fondo muy claro, casi blanco con un toque rosa */
+            --text-color: #333;
+            --button-text-color: #555;
+            --operator-color: #FF69B4; /* Color para operadores */
+            --accent-color: #E0509B; /* Un tono más oscuro de rosa para hover */
+            --border-radius-calc: 20px;
+            --border-radius-buttons: 10px;
+            --shadow-light: rgba(0, 0, 0, 0.08);
+            --shadow-medium: rgba(0, 0, 0, 0.12);
+        }
+
+        body {
+            background: var(--bg-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-color);
+            margin: 0;
+        }
+
+        .calculadora {
+    background: #ffffff;
+    border-radius: var(--border-radius-calc);
+    box-shadow: 0 8px 30px var(--shadow-medium);
+    padding: 30px;
+    border: 1px solid var(--soft-pink);
+    margin: 0 auto; /* Esto centra horizontalmente */
+    }
+
+        .visor {
+            background: var(--bg-color); /* Fondo del visor más claro */
+            color: var(--primary-pink); /* Color del texto del visor rosa */
+            font-family: 'Share Tech Mono', monospace; /* Una fuente tipo "digital" pero legible */
+            font-size: 2.5em;
+            border-radius: var(--border-radius-buttons);
+            padding: 15px 18px 10px 18px;
+            margin-bottom: 20px;
+            min-width: 280px; /* Un poco más ancha */
+            text-align: right;
+            box-shadow: inset 0 2px 8px var(--shadow-light); /* Sombra interna más clara */
+            letter-spacing: 1px;
+            min-height: 90px;
+            height: auto; /* Altura auto para que se adapte al contenido */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Espacio entre el input y el resultado */
+            align-items: flex-end;
+            word-break: break-all; /* Para evitar desbordamiento con números largos */
+        }
+
+        .visor .resultado {
+            font-size: 0.7em; /* Resultado un poco más pequeño */
+            color: var(--text-color); /* Color más oscuro para el resultado */
+            opacity: 0.7;
+            min-height: 1em; /* Para mantener el espacio */
+        }
+
+        .visor .input {
+            font-size: 1em; /* Input principal */
+            color: var(--primary-pink);
+            min-height: 1.2em; /* Para mantener el espacio */
+        }
+
+        .botones {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px; /* Espacio entre botones */
+        }
+
+        .botones button {
+            background-color: var(--light-pink); /* Fondo de botón rosa claro */
+            color: var(--button-text-color);
+            border: none;
+            border-radius: var(--border-radius-buttons);
+            padding: 20px;
+            font-size: 1.5em;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 8px var(--shadow-light);
+            outline: none; /* Elimina el contorno al hacer clic */
+        }
+
+        .botones button:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 4px var(--shadow-light);
+        }
+
+        /* Estilos específicos para operadores */
+        .botones button:is(
+            :nth-child(1), /* + */
+            :nth-child(2), /* - */
+            :nth-child(3), /* * */
+            :nth-child(4), /* / */
+            :nth-child(5), /* % */
+            :nth-child(6)  /* √ */
+        ) {
+            background-color: var(--primary-pink); /* Operadores rosa vibrante */
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .botones button:is(
+            :nth-child(1),
+            :nth-child(2),
+            :nth-child(3),
+            :nth-child(4),
+            :nth-child(5),
+            :nth-child(6)
+        ):hover {
+            background-color: var(--accent-color);
+        }
+
+        /* Estilos para AC, CE */
+        .botones button:is(
+            :nth-child(17), /* AC */
+            :nth-child(18)  /* CE */
+        ) {
+            background-color: var(--soft-pink); /* Rosado más suave para limpiar */
+            color: var(--button-text-color);
+        }
+
+        .botones button:is(
+            :nth-child(17),
+            :nth-child(18)
+        ):hover {
+            background-color: #EFC4D4; /* Tono ligeramente más oscuro al pasar el mouse */
+        }
+
+        /* Estilo para el botón de igual */
+        .botones button:nth-child(19) { /* = */
+            background-color: var(--primary-pink);
+            color: #fff;
+            grid-column: span 2; /* Para que ocupe dos columnas si quieres un botón más grande */
+            font-weight: 700;
+        }
+
+        .botones button:nth-child(19):hover {
+            background-color: var(--accent-color);
+        }
+
+        /* Estilo para el punto decimal */
+        .botones button:nth-child(20) { /* . */
+            background-color: var(--light-pink);
+            color: var(--button-text-color);
+        }
+        .botones button:hover:not(:nth-child(19)):not(:is(
+            :nth-child(1),
+            :nth-child(2),
+            :nth-child(3),
+            :nth-child(4),
+            :nth-child(5),
+            :nth-child(6),
+            :nth-child(17),
+            :nth-child(18)
+        )) {
+            background-color: #FFDEEE; /* Un rosa aún más claro para los números al pasar el mouse */
+        }
+
+        .calcu {
+    background-color: #75052C;
+    margin-bottom: 8vh;
+    padding: 4rem 2rem;
+    border-radius: 2vh;
+    display: flex;
+    justify-content: center;
+}
+
+footer {
+    background-color: #75052C;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.copy {font-size: medium;
+    background-color: #75052C;
+    color: white;
+    text-align: center;
+    padding: 0;
+}
+
+.contenedor-flex {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 90px;
+  padding: 40px 20px;
+  margin-top: 4vh;
+  flex-wrap: wrap; /* Hace que se adapten en pantallas más chicas */
+}
+
+.section-container {
+  flex: 1 1 400px; /* Flexible y mínimo 400px */
+  max-width: 500px;
+}
+
+.calcu {
+  flex: 1 1 350px;
+  padding: 0;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+
+  .navbar nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .navbar nav ul li {
+    margin: 0;
+  }
+
+  footer {
+    font-size: 0.9rem;
+    padding: 8px 0;
+  }
+
+  main {
+    padding-bottom: 90px;
+  }
+
+   .contenedor-flex {margin-top: -4vh;
+    gap: 10px;
+    padding: 20px 10px;
+  }
+
+  .section-container {
+    padding: 20px 15px;
+  }
+
+  .calcu {
+    padding: 0;
+    margin: 0;
+  }
+
+}
+  </style>
+</head>
+<body>
+
+      <header class="navbar">
+        <nav>
+            <ul>
+                <li><a href="/index.html">Linktree</a></li>
+                <li><a href="index.html#sobre-mi">Sobre mí</a></li>
+                <li><a href="index.html#habilidades">Habilidades</a></li>
+                <li><a href="index.html#resumen">Educación</a></li>
+                <li><a href="index.html#proyectos">Proyectos</a></li>
+                <li><a href="index.html#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+  <main>
+    <div class="contenedor-flex">
+    <section class="section-container">
+      <h2>De qué trata este proyecto</h2>
+      <p>
+        Esta calculadora fue desarrollada como parte de mi portfolio para practicar lógica de programación y diseño web. Permite realizar operaciones básicas y fue construida <strong> HTML, CSS y JavaScript </strong>
+      </p>
+    </section>
+
+    <section class="calcu">
+     <div class="calculadora">
+        <div class="visor">
+            <span class="resultado"></span>
+            <span class="input">0</span> </div>
+        <div class="botones">
+            <button>+</button>
+            <button>-</button>
+            <button>*</button>
+            <button>/</button>
+            <button>%</button>
+            <button>√</button>
+
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button>0</button>
+
+            <button>AC</button>
+            <button>CE</button>
+            <button>=</button>
+            <button>.</button>
+        </div>
+    </div>
+
+    <script>
+        function suma(a, b) {
+            return a + b;
+        }
+
+        function resta(a, b) {
+            return a - b;
+        }
+
+        function multiplicacion(a, b) {
+            return a * b;
+        }
+
+        function division(a, b) {
+            if (b === 0) return 'Error'; // Evitar división por cero
+            return a / b;
+        }
+
+        function porcentaje(a) {
+            return a / 100;
+        }
+
+        function raiz(a) {
+            if (a < 0) return 'Error'; // Raíz de números negativos
+            return Math.sqrt(a);
+        }
+
+        const botones = document.querySelectorAll('button');
+        const inputSpan = document.querySelector('.input');
+        const resultadoSpan = document.querySelector('.resultado'); // Cambiado a resultadoSpan
+
+        let inputActual = '0'; // Empezamos con '0' en el input
+        let operador = null;
+        let valorAnterior = null;
+        let esperandoSegundoOperando = false;
+
+        function updateDisplay() {
+            inputSpan.textContent = inputActual;
+            if (resultadoSpan.textContent === '' && inputActual === '0') {
+                 resultadoSpan.textContent = ''; // Limpiar si solo hay un 0 en el input
+            } else if (resultadoSpan.textContent === '' && inputActual !== '0' && !esperandoSegundoOperando) {
+                // Si inputActual es un número nuevo y no estamos esperando el segundo operando, ocultar el resultado
+                resultadoSpan.textContent = '';
+            }
+        }
+
+
+        botones.forEach(boton => {
+            boton.addEventListener('click', () => {
+                const valor = boton.textContent;
+
+                if (!isNaN(valor)) {
+                    // Si es un número
+                    if (esperandoSegundoOperando) {
+                        inputActual = valor;
+                        esperandoSegundoOperando = false;
+                        resultadoSpan.textContent = ''; // Limpiar el resultado al empezar un nuevo número
+                    } else {
+                        if (inputActual === '0' && valor !== '.') {
+                            inputActual = valor; // Reemplazar '0' si se presiona otro número
+                        } else {
+                            inputActual += valor;
+                        }
+                    }
+                } else if (valor === '.') {
+                    if (!inputActual.includes('.')) {
+                        if (inputActual === '') {
+                            inputActual = '0.'; // Si está vacío, empieza con '0.'
+                        } else {
+                            inputActual += '.';
+                        }
+                    }
+                } else if (valor === 'AC') {
+                    inputActual = '0';
+                    operador = null;
+                    valorAnterior = null;
+                    esperandoSegundoOperando = false;
+                    resultadoSpan.textContent = '';
+                } else if (valor === 'CE') {
+                    inputActual = '0';
+                    // No afecta el operador o el valorAnterior, solo limpia el input actual
+                } else if (valor === '=') {
+                    if (operador && valorAnterior !== null && !esperandoSegundoOperando) {
+                        let resultadoCalculo;
+                        const numActual = parseFloat(inputActual);
+
+                        switch (operador) {
+                            case '+':
+                                resultadoCalculo = suma(valorAnterior, numActual);
+                                break;
+                            case '-':
+                                resultadoCalculo = resta(valorAnterior, numActual);
+                                break;
+                            case '*':
+                                resultadoCalculo = multiplicacion(valorAnterior, numActual);
+                                break;
+                            case '/':
+                                resultadoCalculo = division(valorAnterior, numActual);
+                                break;
+                            default:
+                                return; // No hay operador válido
+                        }
+                        resultadoSpan.textContent = resultadoCalculo;
+                        inputActual = resultadoCalculo.toString(); // Guarda el resultado para futuras operaciones
+                        operador = null;
+                        valorAnterior = null;
+                        esperandoSegundoOperando = true; // Para que el siguiente número reemplace el input
+                    } else if (inputActual !== '0' && (operador === '%' || operador === '√')) {
+                        // Manejo de % y √ si se presionan justo antes de '=' (o como única operación)
+                        let res;
+                        const num = parseFloat(inputActual);
+                        if (operador === '%') {
+                            res = porcentaje(num);
+                        } else if (operador === '√') {
+                            res = raiz(num);
+                        }
+                        resultadoSpan.textContent = res;
+                        inputActual = res.toString();
+                        operador = null;
+                        valorAnterior = null;
+                        esperandoSegundoOperando = true;
+                    }
+                } else if (['%', '√'].includes(valor)) {
+                    if (inputActual !== '0' || resultadoSpan.textContent !== '') {
+                        const numToOperate = inputActual !== '0' ? parseFloat(inputActual) : parseFloat(resultadoSpan.textContent);
+                        let res;
+                        if (valor === '%') {
+                            res = porcentaje(numToOperate);
+                        } else if (valor === '√') {
+                            res = raiz(numToOperate);
+                        }
+                        resultadoSpan.textContent = res;
+                        inputActual = res.toString();
+                        operador = null; // Reiniciar operador después de una operación unaria
+                        valorAnterior = null;
+                        esperandoSegundoOperando = true; // El siguiente número borra el resultado
+                    }
+                } else {
+                    // Operadores binarios: + - * /
+                    if (inputActual !== '0') {
+                        if (valorAnterior === null) {
+                            valorAnterior = parseFloat(inputActual);
+                        } else if (!esperandoSegundoOperando) {
+                             // Si ya hay un valorAnterior y un inputActual, calcula el resultado intermedio
+                             let resultadoIntermedio;
+                             const numActual = parseFloat(inputActual);
+                             switch (operador) {
+                                case '+': resultadoIntermedio = suma(valorAnterior, numActual); break;
+                                case '-': resultadoIntermedio = resta(valorAnterior, numActual); break;
+                                case '*': resultadoIntermedio = multiplicacion(valorAnterior, numActual); break;
+                                case '/': resultadoIntermedio = division(valorAnterior, numActual); break;
+                             }
+                             valorAnterior = resultadoIntermedio;
+                             resultadoSpan.textContent = resultadoIntermedio;
+                        }
+                        operador = valor;
+                        esperandoSegundoOperando = true;
+                        inputSpan.textContent = valorAnterior + ' ' + operador; // Mostrar el valor anterior y el operador
+                    } else if (resultadoSpan.textContent !== '') {
+                        // Si no hay input actual pero hay un resultado, úsalo como valorAnterior
+                        valorAnterior = parseFloat(resultadoSpan.textContent);
+                        operador = valor;
+                        esperandoSegundoOperando = true;
+                        inputSpan.textContent = valorAnterior + ' ' + operador;
+                        resultadoSpan.textContent = ''; // Limpiar el resultado al empezar una nueva cadena de operación
+                    }
+                }
+                updateDisplay();
+            });
+        });
+
+        // Inicializar el display
+        updateDisplay();
+    </script>
+    </section>
+    </div>
+  </main>
+
+  <footer>
+        <p class="copy">&copy; 2025 Victoria Guasch Vives</p>
+    </footer>
+
+</body>
+</html>

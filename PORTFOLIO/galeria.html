@@ -1,0 +1,307 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería</title>
+    <link rel="icon" href="/PORTFOLIO/imagenes/camera.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+
+:root {
+      --primary-pink: #FF69B4;
+      --light-pink: #FFC0CB;
+      --soft-pink: #F8BBD0;
+      --bg-color: #FDF4F6;
+      --text-color: #333;
+      --heading-color: #75052C;
+    }
+    
+body {font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+} 
+
+.navbar {
+    background-color: #fff;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar nav ul li {
+    margin: 0 20px;
+}
+
+.navbar nav ul li a {
+    text-decoration: none;
+    color: var(--heading-color);
+    font-weight: 600;
+    font-size: 1.2rem;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar nav ul li a:hover {
+    background-color: #FFC0CB;
+    color: #fff;
+}
+
+  main {
+    padding: 2rem 2rem 6rem 2rem;
+  }
+
+  h2 {
+  font-size: 2rem;
+  color: #75052C;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+  .galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 2rem;
+  }
+
+  .galeria div { height: 40vh;
+  background-color: #c9a4a3;
+  border-radius: 1rem;
+  box-shadow: 0 6px 12px rgba(194, 27, 27, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.galeria div:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+  .galeria img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  .lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(36, 35, 35, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .lightbox.active {
+    display: flex;
+  }
+
+  .lightbox-img {
+    max-width: 90vw;
+    max-height: 80vh;
+  }
+
+  .lightbox-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1100;
+    padding: 1rem 1rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+
+  .lightbox-btn.prev {
+    left: 20vw;
+  }
+
+  .lightbox-btn.next {
+    right: 20vw;
+  }
+
+  footer {
+    background-color: #75052C;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.copy {
+    background-color: #75052C;
+    color: white;
+    text-align: center;
+    padding: 0;
+}
+
+@media (max-width: 600px) {
+
+  .navbar nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .navbar nav ul li {
+    margin: 0;
+  }
+
+  footer {
+    font-size: 0.9rem;
+    padding: 8px 0;
+  }
+
+  main {
+    padding-bottom: 140px;
+  }
+
+   .galeria {
+                /* Para pantallas pequeñas, 1 columna */
+                grid-template-columns: 1fr;
+            }
+
+            .galeria div {
+                height: 25vh; /* Ajuste la altura para pantallas pequeñas */
+            }
+
+            .lightbox-btn {
+                padding: 0.8rem;
+                font-size: 1rem;
+            }
+            .lightbox-btn.prev {
+                left: 10px;
+            }
+
+            .lightbox-btn.next {
+                right: 10px;
+            }
+
+}
+</style>
+
+      </head>
+      <body>
+
+    <header class="navbar">
+        <nav>
+            <ul>
+                <li><a href="/index.html">Linktree</a></li>
+                <li><a href="index.html#sobre-mi">Sobre mí</a></li>
+                <li><a href="index.html#habilidades">Habilidades</a></li>
+                <li><a href="index.html#resumen">Educación</a></li>
+                <li><a href="index.html#proyectos">Proyectos</a></li>
+                <li><a href="index.html#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<main>
+  <h2> ¡Bienvenido a mis proyectos visuales!</h2>
+  <section class="galeria"></section>
+</main>
+
+    <!-- Lightbox -->
+    <div class="lightbox">
+        <button class="lightbox-btn prev">Anterior</button>
+        <button class="lightbox-btn next">Siguiente</button>
+    </div>
+
+    <script>
+        // Cargar imagenes en la galería
+        const totalImagenes = 9;
+        const galeria = document.querySelector('.galeria');
+
+        for (let i = 1; i <= totalImagenes; i++) {
+            const div = document.createElement('div');
+            const img = document.createElement('img');
+            img.src = `imagenes/galeria/img${i}.png`; // Cambiar por la ruta de las imágenes
+            img.alt = `Imagen ${i}`;
+            div.appendChild(img);
+            galeria.appendChild(div);
+        }
+
+        // Lógica del lightbox
+        const lightbox = document.querySelector('.lightbox');
+        const lightboxImg = document.querySelector('.lightbox-img');
+
+        galeria.addEventListener('click', function (e) {
+            if (e.target.tagName === 'IMG') {
+                lightboxImg.src = e.target.src;
+                lightbox.classList.add('active');
+            }
+        });
+
+        // Cerrar lightbox al hacer clic en cualquier parte
+        lightbox.addEventListener('click', function () {
+            lightbox.classList.remove('active');
+            lightboxImg.src = '';
+        });
+
+        // Obtener todas las imágenes de la galería
+        const imagenes = Array.from(document.querySelectorAll('.galeria img'));
+
+        // Mostrar imagen en lightbox por índice
+        function mostrarImagen(idx) {
+            currentIndex = (idx + imagenes.length) % imagenes.length;
+            lightboxImg.src = imagenes[currentIndex].src;
+        }
+
+        // Abrir lightbox y guardar índice actual
+        galeria.addEventListener('click', function (e) {
+            if (e.target.tagName === 'IMG') {
+                currentIndex = imagenes.indexOf(e.target);
+                mostrarImagen(currentIndex);
+                lightbox.classList.add('active');
+            }
+        });
+
+        // Navegación botones
+        const prevBtn = document.querySelector('.lightbox-btn.prev');
+        const nextBtn = document.querySelector('.lightbox-btn.next');
+
+        prevBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            mostrarImagen(currentIndex - 1);
+        });
+
+        nextBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            mostrarImagen(currentIndex + 1);
+        });
+
+        // Evitar cerrar modal al hacer clic en imagen o botones
+        prevBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+        });
+        nextBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+        });
+
+    </script>
+
+    <footer>
+        <p class="copy">&copy; 2025 Victoria Guasch Vives</p>
+    </footer>
+
+      </body>
+      </html>
